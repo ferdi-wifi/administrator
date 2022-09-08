@@ -1,0 +1,14 @@
+     <ul class="inbox-nav inbox-divider">
+                           
+                            <li class="{% if submenu == "deskrpsi" %}active{% endif %}">
+                              <a href="{% url 'standarjudul' data %}"><i class="ti-angle-double-right"></i> Deskripsi Standar</a>
+                            </li>
+
+                            
+                        {% for jdl in judulitem %}
+                            <li class="{% if submenu == jdl.link_token_judul_item %}active{% endif %}">
+                              <a href="{% url 'standarjudulitem' jdl.standar.link_token_standar jdl.link_token_judul_item %}"><i class="ti-angle-double-right"></i> {{jdl.judul_item}}</a>
+                            </li>
+                        {% endfor %} 
+                            
+                        </ul>                    

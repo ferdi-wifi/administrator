@@ -1,0 +1,14 @@
+<ul class="inbox-nav inbox-divider">
+                           
+                            <li class="{% if menu == "qrcode" %}active{% endif %}">
+                              <a href="{% url 'qrcode' datastandar.link_token_standar %}"><i class="ti-angle-double-right"></i> Deskripsi Standar</a>
+                            </li>
+
+                            
+                        {% for jdl in judulitem %}
+                            <li class="{% if menu == jdl.link_token_judul_item %}active{% endif %}">
+                              <a href="{% url 'qrcodestandarjudulitem' jdl.standar.link_token_standar jdl.link_token_judul_item %}"><i class="ti-angle-double-right"></i> {{jdl.judul_item}}</a>
+                            </li>
+                        {% endfor %} 
+                            
+                        </ul>  

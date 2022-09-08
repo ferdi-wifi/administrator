@@ -1,0 +1,126 @@
+{% extends "baseqrcode.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="main-content">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="compose-email">
+                      <div class="mail-box">
+                        <aside class="sm-side">
+                          
+                          <div class="inbox-body text-center">
+                            <a href="#myModal" data-toggle="modal" title="Compose" class="btn btn-compose"> MENU</a>
+                     
+                          </div>
+                      {% comment %}  {% endcomment %}
+                           {% include "submenu.html" %}
+                      {% comment %}  {% endcomment %}
+                        </aside>
+                        <aside class="lg-side">
+                          <div class="inbox-head">
+                            <h3 class="input-text">{{datastandar.nama_standar}}</h3>
+                          </div>
+                          <div class="table-responsive ml-4">
+                          {% comment %}  {% endcomment %}
+                         <div class="main-content">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="compose-email">
+                      <div class="mail-box">
+                        <aside class="sm-side">
+                        <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                 <tr>
+                                                    <th>#</th>
+                                                    <th>Nama Standar</th>
+                                                    <th>Judul Item</th>
+                                                     <th>Keterangan</th>
+                                                    <th>Guru</th>
+                                                    <th>Mapel</th>
+                                                    <th>Kelas</th>
+                                                    <th>Berkas</th>
+                                                   
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for row in data %}
+                                <tr>
+										<td>{{ forloop.counter }}</td>
+										<td>{{row.judul_item.standar.nama_standar}}</td>
+										<td>{{row.judul_item}}</td>
+										<td>
+                                        {% if row.teks %}
+                                        {{row.teks}}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                        </td>
+										<td>
+                                        {% if row.guru %}
+                                        {{row.guru}}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                        </td>
+										<td>
+                                        {% if row.mata_pelajaran %}
+                                        {{row.mata_pelajaran}}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                        </td>
+										<td>
+                                        {% if row.kelas %}
+                                         {{row.kelas}}
+                                        {% else %}
+                                        -
+                                        {% endif %}
+                                       </td>
+                                       <td>
+                                       {% if row.berkas %}
+                                        <a href="{{row.berkas.url}}"><i class="fa fa-download"></i> File</a>
+                                       {% else %}
+                                       No File
+                                       {% endif %}
+                                       </td>
+                                      
+										
+									</tr>
+                                {% empty %}
+                                <tr><td colspan="7" align="center">Data Kosong</td></tr>
+                                {% endfor %}
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        </aside>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                          {% comment %}  {% endcomment %}
+                          </div>
+                        </aside>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+  
+{% endblock content  %} 

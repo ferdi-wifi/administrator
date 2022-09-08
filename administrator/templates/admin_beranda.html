@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+  {% comment %}  {% endcomment %}
+                <section id="main-content">
+                {% comment %}  {% endcomment %}
+                <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-panel color-success border-success"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Jumlah Standar</div>
+                                        <div class="stat-digit">{{jmlStandar}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Jumlah Guru</div>
+                                        <div class="stat-digit">{{jmlGuru}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                                    </div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Jumlah Mapel</div>
+                                        <div class="stat-digit">{{jmlMata_pelajaran}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-one">
+                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                    <div class="stat-content dib">
+                                        <div class="stat-text">Jumlah Kelas</div>
+                                        <div class="stat-digit">{{jmlKelas}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% comment %}  {% endcomment %}
+                    {% comment %} <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>Table Basic </h4>
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Status</th>
+                                                    <th>Date</th>
+                                                    <th>Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Kolor Tea Shirt For Man</td>
+                                                    <td><span class="badge badge-primary">Sale</span></td>
+                                                    <td>January 22</td>
+                                                    <td class="color-primary">$21.56</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Kolor Tea Shirt For Women</td>
+                                                    <td><span class="badge badge-success">Tax</span></td>
+                                                    <td>January 30</td>
+                                                    <td class="color-success">$55.32</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Blue Backpack For Baby</td>
+                                                    <td><span class="badge badge-danger">Extended</span></td>
+                                                    <td>January 25</td>
+                                                    <td class="color-danger">$14.85</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# column -->
+                    </div> {% endcomment %}
+                    <!-- /# row -->
+                </section>
+{% endblock content  %} 

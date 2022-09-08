@@ -1,0 +1,93 @@
+
+ <ul>
+          {% for group in user.groups.all  %}
+                     {% if group.name == "administrator" %}
+
+                        <li class="label">Main Administratior</li>
+    <li class="{% if menu == "beranda" %}active{% endif %}">
+        <a href="{% url 'beranda_admin' %}" class="sidebar">
+            <i class="ti-home"></i> Dashboard
+        </a>
+    </li>
+    <li class="{% if menu == "tu" %}active{% endif %}">
+        <a href="{% url 'tu_admin' %}" class="sidebar">
+            <i class="ti-user"></i> Tata Usaha
+        </a>
+    </li>
+    <li class="{% if menu == "guru" %}active{% endif %}">
+        <a href="{% url 'guru_admin' %}" class="sidebar">
+            <i class="ti-comments-smiley"></i> Guru
+        </a>
+    </li>
+    <li class="{% if menu == "kelas" %}active{% endif %}">
+        <a href="{% url 'kelas_admin' %}" class="sidebar">
+            <i class="ti-ruler-pencil"></i> Kelas
+        </a>
+    </li>
+    <li class="{% if menu == "mata_pelajaran" %}active{% endif %}">
+        <a href="{% url 'mata_pelajaran_admin' %}" class="sidebar">
+            <i class="ti-ruler-pencil"></i> Mata Pelajaran
+        </a>
+    </li>
+    <li class="{% if menu == "tahun_pelajaran" %}active{% endif %}">
+        <a href="{% url 'tahun_pelajaran_admin' %}" class="sidebar">
+            <i class="ti-stamp"></i> Tahun Pelajaran
+        </a>
+    </li>
+    <li class="{% if menu == "standar" %}active{% endif %}">
+        <a href="{% url 'standar_admin' %}" class="sidebar">
+            <i class="ti-panel"></i> Standar
+        </a>
+    </li>
+    <li class="{% if menu == "judul_item" %}active{% endif %}">
+        <a href="{% url 'judul_item_admin' %}" class="sidebar">
+            <i class="ti-agenda"></i> Judul Item
+        </a>
+    </li>
+    <li class="{% if menu == "item" %}active{% endif %}">
+        <a href="{% url 'item_admin' %}" class="sidebar">
+            <i class="ti-wallet"></i>Item
+        </a>
+    </li>
+    <li class="{% if menu == "berkas" %}active{% endif %}">
+        <a href="{% url 'detail_berkas_admin' %}" class="sidebar">
+            <i class="ti-receipt"></i>Detail Berkas
+        </a>
+    </li>
+
+    <li>
+       <a href="{% url 'logout' %}"> 
+            <i class="ti-close"></i> Logout
+        </a>
+    </li>
+          
+                        {% endif %}
+                        {% if group.name == "tu" %}
+                      <li class="label">Main Tu</li>
+    <li class="{% if menu == "beranda" %}active{% endif %}">
+        <a href="{% url 'beranda' %}" class="sidebar">
+            <i class="ti-home"></i> Dashboard
+        </a>
+    </li>
+    {% for st in standar %}
+    <li class="{% if data == st.link_token_standar %}active{% endif %}">
+        <a href="{% url 'standarjudul' st.link_token_standar %}" class="sidebar">
+            <i class="ti-book"></i> {{st.nama_standar}}
+        </a>
+    </li>
+    {% empty %}
+    <li>
+       
+            <i class="ti-help"></i> Kosong
+       
+    </li>
+    {% endfor %}
+    <li>
+       <a href="{% url 'logout' %}"> 
+            <i class="ti-close"></i> Logout
+        </a>
+    </li>
+          
+                        {% endif %}
+                    {% endfor %}
+</ul>

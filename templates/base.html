@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% for group in user.groups.all  %}
+        {% if group.name == "administrator" %}
+        <title>Administratior | Aplikasi e-Akreditasi</title>
+        
+        {% endif %}
+        {% if group.name == "tu" %}
+        <title>TU | Aplikasi e-Akreditasi</title>
+        
+        {% endif %}
+    {% endfor %}
+   
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="{% static 'assets/images/logo.ico' %}">
+   
+
+
+    <!-- Common -->
+    <link href="{% static 'assets/css/lib/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/lib/themify-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/lib/menubar/sidebar.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/lib/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/lib/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{% static 'assets/images/logoo.png' %}" width="50" alt=""/> 
+                        <span>Akreditasi</span>
+                    </a>
+                </div>
+               {% include "navbar.html" %}
+            </div>
+        </div>
+    </div>
+    <!-- /# sidebar -->
+
+
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="float-left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="float-right">
+                        <div class="dropdown dib">
+                            
+                        </div>
+                        <div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <span class="user-avatar">
+                                {% for group in user.groups.all  %}
+        {% if group.name == "administrator" %}
+        Administratior
+        
+        {% endif %}
+        {% if group.name == "tu" %}
+        TU 
+        
+        {% endif %}
+    {% endfor %}
+                                
+                                    
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1>{{judul}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Halaman</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">{{menu|title}}</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+                {% block content %}
+
+                {% endblock content %}
+                {% comment %}  {% endcomment %}
+                <!-- /# row -->
+                <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="extra-area-chart"></div>
+                            <div id="morris-line-chart"></div>
+                            <div class="footer">
+                                <p>2022 © e-Akreaditasi -
+                                    <a href="#">Arsip</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Common -->
+    <script src="{% static 'assets/js/lib/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/jquery.nanoscroller.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/menubar/sidebar.js' %}"></script>
+    <script src="{% static 'assets/js/lib/preloader/pace.min.js' %}"></script>
+    <script src="{% static 'assets/js/lib/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+
+
+
+</body>
+
+</html>
